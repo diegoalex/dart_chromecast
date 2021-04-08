@@ -183,6 +183,10 @@ class CastSender extends Object {
     }
   }
 
+  void getMediaStatus() {
+    _mediaChannel.sendMessage({'type': 'GET_STATUS'});
+  }
+
   void stop() {
     _castMediaAction('STOP');
   }
