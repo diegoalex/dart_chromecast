@@ -184,7 +184,9 @@ class CastSender extends Object {
   }
 
   void getMediaStatus() {
-    _mediaChannel.sendMessage({'type': 'GET_STATUS'});
+    if (null != _mediaChannel) {
+      _mediaChannel.sendMessage({'type': 'GET_STATUS'});
+    }
   }
 
   void stop() {
