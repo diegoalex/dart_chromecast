@@ -297,7 +297,7 @@ class CastSender extends Object {
   void _handleMediaStatus(Map payload) {
     log.fine('Handle media status: ' + payload.toString());
 
-    if (null != payload['status']) {
+    if (null != payload['status'] && null != _castSession) {
       if (!_castSession.isConnected) {
         _castSession.isConnected = true;
         _handleContentQueue();
