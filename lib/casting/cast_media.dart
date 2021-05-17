@@ -1,10 +1,10 @@
 class CastMedia {
-
   final String contentId;
   String title;
   bool autoPlay = true;
   double position;
   String contentType;
+  String streamType;
   List<String> images;
 
   CastMedia({
@@ -13,6 +13,7 @@ class CastMedia {
     this.autoPlay = true,
     this.position = 0.0,
     this.contentType = 'video/mp4',
+    this.streamType = 'BUFFERED',
     this.images,
   }) {
     if (null == images) {
@@ -31,9 +32,8 @@ class CastMedia {
         'contentType': contentType,
         'images': images,
         'title': title,
-        'streamType': 'BUFFERED',
+        'streamType': streamType,
       }
     };
   }
-
 }
